@@ -1,0 +1,160 @@
+# xyz screenshot idk 
+bindsym Mod4+p exec grim -g "$(slurp)" - | wl-copy
+#fullscreen screenshot
+bindsym Mod4+o exec grim - | wl-copy
+
+exec --no-startup-id autotiling &
+
+set $bg           #091615
+set $bg_alt       #0D1D1A
+set $bg_active    #12302A
+
+set $seafoam      #70D1BA
+set $mint         #91E5D0
+set $mint_light   #A5DCCE
+set $text         #D5F5EC
+set $text_bright  #F0FFFC
+set $muted        #89B8AD
+
+set $green        #72C7A7
+set $green_light  #91E5C1
+
+set $urgent       #D58F9F
+set $urgent_light #F0A9B7
+
+hide_edge_borders none
+default_border pixel 1
+default_floating_border pixel 1
+
+
+set $mod Mod4
+font pango:monospace 12
+
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id nm-applet
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec rofi -show drun
+
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+f fullscreen toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym Mod4+Shift+c exec swaymsg reload
+bindsym $mod+Shift+e exec pkill sway
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+  }
+
+bar {
+    status_command i3status
+    position top
+    tray_output primary
+
+    colors {
+        background #091615
+        statusline #D5F5EC
+        separator  #405E58
+
+        #                         border      bg          text
+        focused_workspace         #70D1BA     #12302A     #F0FFFC
+        active_workspace          #72C7A7     #0D1D1A     #D5F5EC
+        inactive_workspace        #0D1D1A     #0D1D1A     #89B8AD
+        urgent_workspace          #D58F9F     #D58F9F     #F0FFFC
+    }
+}
+
+bindsym $mod+r mode "resize"
+#                         border        bg            text        indicator   child_border
+client.focused            $seafoam      $bg_active    $text_bright #00000000   $seafoam
+client.focused_inactive   $bg           $bg           $text       #00000000   $bg
+client.unfocused          $bg           $bg           $text       #00000000   $bg
+client.urgent             $urgent       $urgent       $text_bright #00000000   $urgent
+client.placeholder        $bg           $bg           $text       #00000000   $bg
+
+
+
+}
+input "type:keyboard" {
+    xkb_layout us,ru
+    xkb_options grp:alt_shift_toggle
+}

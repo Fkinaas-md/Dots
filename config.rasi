@@ -1,0 +1,147 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    font: "monospace 12";
+}
+
+* {
+    background:     #091615;
+    background-alt: #0D1D1A;
+    foreground:     #D5F5EC;
+
+    border-color:   #405E58;
+
+    selected-bg:    #70D1BA;
+    selected-fg:    #091615;
+
+    active-bg:      #72C7A7;
+    active-fg:      #091615;
+
+    urgent-bg:      #D58F9F;
+    urgent-fg:      #091615;
+}
+
+/* Main window */
+
+window {
+    background-color: @background;
+    border-color: @border-color;
+    text-color: @foreground;
+}
+
+/* Input */
+
+inputbar {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+prompt {
+    background-color: @background;
+    text-color: #91E5D0;
+}
+
+entry {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+/* List */
+
+listview {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+/* Normal entries */
+
+element {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element normal.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element normal.urgent {
+    background-color: @urgent-bg;
+    text-color: @urgent-fg;
+}
+
+element normal.active {
+    background-color: @active-bg;
+    text-color: @active-fg;
+}
+
+/* Alternate entries */
+
+element alternate.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element alternate.urgent {
+    background-color: @urgent-bg;
+    text-color: @urgent-fg;
+}
+
+element alternate.active {
+    background-color: @active-bg;
+    text-color: @active-fg;
+}
+
+/* Selected entry */
+
+element selected.normal {
+    background-color: @selected-bg;
+    text-color: @selected-fg;
+}
+
+element selected.active {
+    background-color: @active-bg;
+    text-color: @active-fg;
+}
+
+element selected.urgent {
+    background-color: @urgent-bg;
+    text-color: @urgent-fg;
+}
+
+/* Icons */
+
+element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+/* Scrollbar */
+
+scrollbar {
+    background-color: @background-alt;
+}
+
+slider {
+    background-color: #70D1BA;
+}
+
+mode-switcher {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+button {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+button selected {
+    background-color: #70D1BA;
+    text-color: #091615;
+}
