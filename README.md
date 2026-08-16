@@ -6,7 +6,7 @@
 
 ## put thisss shi here
 
-* **.vimrc** — `~/.vimrc`
+* **vimrc** — `~/.vimrc`
 * **alacritty.toml** — `~/.config/alacritty/alacritty.toml`
 * **config.jsonc** — `~/.config/fastfetch/config.jsonc`
 * **config.rasi** — `~/.config/rofi/config.rasi`
@@ -32,7 +32,7 @@ cd Dots
 
 mkdir -p ~/.config/alacritty ~/.config/fastfetch ~/.config/rofi
 
- cp .vimrc ~/.vimrc
+ cp vimrc ~/.vimrc
  cp alacritty.toml ~/.config/alacritty/alacritty.toml
  cp config.jsonc ~/.config/fastfetch/config.jsonc
  cp config.rasi ~/.config/rofi/config.rasi
