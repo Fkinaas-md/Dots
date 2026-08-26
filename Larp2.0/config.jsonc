@@ -1,0 +1,105 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "padding": {
+            "top": 1,
+            "left": 2
+        },
+        "color": {
+            "1": "magenta",        
+            "2": "light_magenta",  
+            "3": "35",             
+            "4": "95",             
+            "5": "magenta",
+            "6": "light_magenta",
+            "7": "35",
+            "8": "95"
+        }
+    },
+    "display": {
+        "separator": ": ",
+        "color": {
+            "keys": "magenta",
+            "title": "light_magenta"
+        }
+    },
+    "modules": [
+        "title",
+        "separator",
+        {
+            "type": "os",
+            "keyColor": "35"
+        },
+        {
+            "type": "host",
+            "keyColor": "35"
+        },
+        {
+            "type": "kernel",
+            "keyColor": "35"
+        },
+        {
+            "type": "uptime",
+            "keyColor": "35"
+        },
+        {
+            "type": "packages",
+            "keyColor": "35"
+        },
+        {
+            "type": "shell",
+            "keyColor": "35"
+        },
+        {
+            "type": "display",
+            "keyColor": "35"
+        },
+        {
+            "type": "wm",
+            "keyColor": "35"
+        },
+        {
+            "type": "terminal",
+            "keyColor": "35"
+        },
+        {
+            "type": "terminalfont",
+            "keyColor": "35"
+        },
+        {
+            "type": "cpu",
+            "keyColor": "35"
+        },
+        {
+            "type": "gpu",
+            "keyColor": "35"
+        },
+        {
+            "type": "memory",
+            "keyColor": "35"
+        },
+        {
+            "type": "swap",
+            "keyColor": "35"
+        },
+        {
+            "type": "disk",
+            "keyColor": "35"
+        },
+        {
+            "type": "localip",
+            "keyColor": "35"
+        },
+        {
+            "type": "battery",
+            "keyColor": "35"
+        },
+        {
+            "type": "locale",
+            "keyColor": "35"
+        },
+        "break",
+        "colors"
+    ]
+}
+
