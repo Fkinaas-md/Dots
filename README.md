@@ -4,7 +4,7 @@
   <img src="Chimera.png" alt="Chimera Linux Screenshot" width="1920">
 </p>
 
-# larp sahur dots 2.0 (not finished)
+# larp sahur dots 2.0 (not finished yet)
 
 <p align="center">
   <img src="Larp2.0/larp.png" alt="Chimera Linux Screenshot" width="1920">
