@@ -4,6 +4,12 @@
   <img src="Chimera.png" alt="Chimera Linux Screenshot" width="1920">
 </p>
 
+# larp sahur dots 2.0 (not finished)
+
+<p align="center">
+  <img src="Larp2.0/larp.png" alt="Chimera Linux Screenshot" width="1920">
+</p>
+
 ## put thisss shi here
 
 * **vimrc** — `~/.vimrc`
@@ -29,6 +35,22 @@ doas apk add \
 # lmao
 git clone https://github.com/Fkinaas-md/Dots
 cd Dots
+
+mkdir -p ~/.config/alacritty ~/.config/fastfetch ~/.config/rofi
+
+ cp vimrc ~/.vimrc
+ cp alacritty.toml ~/.config/alacritty/alacritty.toml
+ cp config.jsonc ~/.config/fastfetch/config.jsonc
+ cp config.rasi ~/.config/rofi/config.rasi
+
+doas cp config /etc/sway/config
+doas cp i3status.conf /etc/i3status.conf
+```
+
+```bash
+# lmao 2.0
+git clone https://github.com/Fkinaas-md/Dots
+cd Dots/Larp2.0
 
 mkdir -p ~/.config/alacritty ~/.config/fastfetch ~/.config/rofi
 
