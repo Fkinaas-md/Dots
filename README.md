@@ -59,6 +59,6 @@ mkdir -p ~/.config/alacritty ~/.config/fastfetch ~/.config/rofi
  cp config.jsonc ~/.config/fastfetch/config.jsonc
  cp config.rasi ~/.config/rofi/config.rasi
 
-sudo cp config /etc/sway/config
-sudo cp i3status.conf /etc/i3status.conf
+doas cp config /etc/sway/config
+doas cp i3status.conf /etc/i3status.conf
 ```
