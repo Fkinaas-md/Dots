@@ -1,13 +1,29 @@
+# scale
+#output eDP-1 scale 1
+
+#bindsym Mod4+Ctrl+l exec swaylock -f
+# Явно указываем bash и абсолютный путь к твоему скрипту
+#bindsym Mod4+Shift+x exec /bin/bash /home/idk/.swaylock/lock.sh
+
+# Выполняем всё одной встроенной строкой через родной шелл Sway
+bindsym Mod4+Shift+x exec sh -c "brightnessctl --save && brightnessctl set 0% && swaylock -C /home/idk/.swaylock/config; brightnessctl --restore"
+bindsym Mod4+e exec nautilus &
+
+
+
+xwayland enable
+
 # xyz screenshot idk 
 bindsym Mod4+p exec grim -g "$(slurp)" - | wl-copy --type image/png
 #fullscreen screenshot
 bindsym Mod4+o exec grim - | wl-copy --type image/png
 
 #amneziawg kekw
-bindsym Mod4+v exec ip link show idk >/dev/null 2>&1 && doas awg-quick down idk || doas awg-quick up idk
 
-exec dinitctl start wireplumber
-exec dinitctl start pipewire-pulse
+#bindsym Mod4+v exec ip link show idk >/dev/null 2>&1 && doas awg-quick down idk || doas awg-quick up idk
+
+#exec dinitctl start wireplumber
+#exec dinitctl start pipewire-pulse
 
 
 exec --no-startup-id brightnessctl set 1515 &
@@ -41,7 +57,7 @@ gaps outer 6
 
 
 set $mod Mod4
-font pango:monospace 12
+font pango:monospace 14
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
@@ -57,7 +73,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 floating_modifier $mod
 bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+q kill
+bindsym $mod+w kill
 bindsym $mod+d exec rofi -show drun
 
 
@@ -176,3 +192,5 @@ input "type:keyboard" {
     xkb_layout us,ru
     xkb_options grp:alt_shift_toggle
 }
+
+include /etc/sway/config.d/*
